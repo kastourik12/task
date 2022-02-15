@@ -19,8 +19,11 @@ const shows : tvShow[] =[
 })
 export class DisplayShowsComponent implements OnInit {
   tvShows = shows;
+  keyword = '';
+  sortType= '';
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
@@ -29,5 +32,11 @@ export class DisplayShowsComponent implements OnInit {
   addFavorite(show : tvShow ) {
     show.favorite=!show.favorite;
   }
+  sortData(){
+    if(this.sortType == '')
+    {
 
+    }
+
+  }
 }

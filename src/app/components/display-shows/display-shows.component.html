@@ -2,11 +2,12 @@
 <h1>My favorite TV-shows</h1>
 <mat-form-field style="width: 100%" >
   <div class="">
-  <input class="search" matInput  placeholder="🔎 Ex. ium" #input>
+  <input class="search" matInput type="text" placeholder="🔎 Ex. ium" [(ngModel)]="keyword">
   </div>
 </mat-form-field>
-<mat-list>
-  <mat-list-item  *ngFor="let show of tvShows" >
+
+<mat-list *ngIf="tvShows"  >
+  <mat-list-item  *ngFor="let show of tvShows | filter:keyword" >
     <button  (click)="addFavorite(show)">
     <div class="show">
     <mat-icon class="star" *ngIf="show.favorite">star</mat-icon>
@@ -16,3 +17,10 @@
   </button>
   </mat-list-item>
 </mat-list>
+  <select [(ngModel)]="sortType">
+    <option value="" ></option>
+    <option value="Year ascending"></option>
+    <option value="Year descending"></option>
+    <option value="Favorites"></option>
+
+  </select>
