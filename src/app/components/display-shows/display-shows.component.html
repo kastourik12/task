@@ -1,1 +1,18 @@
-<ng-container *ngFor="let tvShow of tvShows "></ng-container>
+
+<h1>My favorite TV-shows</h1>
+<mat-form-field style="width: 100%" >
+  <div class="">
+  <input class="search" matInput  placeholder="🔎 Ex. ium" #input>
+  </div>
+</mat-form-field>
+<mat-list>
+  <mat-list-item  *ngFor="let show of tvShows" >
+    <button  (click)="addFavorite(show)">
+    <div class="show">
+    <mat-icon class="star" *ngIf="show.favorite">star</mat-icon>
+     <p class="title"> {{show.title}}</p>
+     <p class="year"> {{show.year}}</p>
+     </div>
+  </button>
+  </mat-list-item>
+</mat-list>
