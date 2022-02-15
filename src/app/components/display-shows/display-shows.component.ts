@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { title } from 'process';
 import { tvShow } from 'src/app/shared/tvShow';
 
 
@@ -18,6 +17,7 @@ const tvShows : tvShow[] =[
   styleUrls: ['./display-shows.component.scss']
 })
 export class DisplayShowsComponent implements OnInit {
+  tvShows: any;
 
   constructor() { }
 
