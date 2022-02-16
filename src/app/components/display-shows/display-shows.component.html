@@ -5,6 +5,7 @@
   </div>
 </mat-form-field>
 <h3>A list of TV shows</h3>
+<!-- display the list with  ngfor as a clickable buttons that can be clicked to add a tv show to the favorites -->
 <mat-list *ngIf="tvShows"  >
   <mat-list-item  *ngFor="let show of tvShows | filter:keyword" >
     <button  (click)="addFavorite(show)">
@@ -16,12 +17,13 @@
   </button>
   </mat-list-item>
 </mat-list>
+<!-- Select option for sorting the list-->
   <select class="sortOption" [(ngModel)]="sortType" (change)="sortShows()">
     <option value="" *ngIf="sortType==''">Sort By.</option>
     <option value="Year ascending">Year ascending</option>
     <option value="Year descending">Year descending</option>
     <option value="Title ascending">Name ascending</option>
     <option value="Title descending">Name descending</option>
-    <option value="Favorites">Favorites</option>
+    <option value="Favorites">Favorites first</option>
 
   </select>

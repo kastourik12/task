@@ -27,13 +27,16 @@ export class DisplayShowsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // initializing the list of tv shows
     this.tvShows = shows;
   }
 
-
+  // add a show to favorite with click
   addFavorite(show : tvShow ) {
     show.favorite=!show.favorite;
   }
+
+  //sort the list with the select option
   sortShows() {
 
     if (this.sortType == 'Year ascending') {
